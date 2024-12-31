@@ -1,0 +1,10 @@
+{% extends 'base_nav.html' %}
+
+{% block content %}
+    <h1>Sale Details</h1>
+    <p>Product :  <span class="farmer-name"> {{ sale.product.name }}</p> </span>
+    <p>Quantity :  <span class="farmer-name"> {{ sale.quantity }}</p> </span>
+    <p>Total Price :  <span class="farmer-name"> {{ sale.total_price }}</p> </span>
+    <p>Date :  <span class="farmer-name"> {{ sale.date }}</p> </span>
+    <p>Customer :  <span class="farmer-name"> {{ sale.customer.name }}</p> </span>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends 'base_nav.html' %}
+
+{% block content %}
+    <h1>{{ plot.name }}</h1>
+    <p>Location:  <span class="farmer-name">{{ plot.location }}</p></span>
+    <p>Area:  <span class="farmer-name">{{ plot.area }} sq. meters</p></span>
+    <p>Soil Type:  <span class="farmer-name">{{ plot.soil_type }}</p></span>
+    <p>Number of Plants:  <span class="farmer-name">{{ plot.number_of_plants }}</p></span>
+    <p>Farmer:  <span class="farmer-name">{{ plot.farmer.name }}</p></span>
+{% endblock %}

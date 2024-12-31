@@ -1,0 +1,96 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Tea farm manager</title>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="{% static 'css/base_nav.css' %}"> 
+
+  </head>
+  <body>
+    <div class="btn">
+      <span class="fas fa-bars"></span>
+    </div>
+    <nav class="sidebar">
+      <div class="text">Tea farm</div>
+      <ul>
+        <li class="active"><a href="#">Dashboard</a></li>
+        
+        
+        <li>
+          <a href="#" class="feat-btn">Farmers
+            <span class="fas fa-caret-down first"></span>
+          </a>
+          <ul class="feat-show">
+            <li><a href="{% url 'farmer_list' %}">farmers list</a></li>
+            <li><a href="{% url 'create_farmer' %}">Add farmer</a></li>
+          </ul>
+        </li>
+
+        <li>
+          <a href="#" class="serv-btn">Tea Plots
+            <span class="fas fa-caret-down first"></span>
+          </a>
+          <ul class="serv-show">
+            <li><a href="{% url 'plot_list' %}">plots list</a></li>
+            <li><a href="{% url 'create_plot' %}">Add  plots</a></li>
+          </ul>
+        </li>
+
+
+
+        {% comment %} <li>
+          <a href="#" class="serv-btn">Services
+            <span class="fas fa-caret-down second"></span>
+          </a>
+          <ul class="serv-show">
+            <li><a href="#">App Design</a></li>
+            <li><a href="#">Web Design</a></li>
+          </ul>
+        </li> {% endcomment %}
+     
+        <li><a href="{% url 'employee_list' %}">Employees</a></li>
+        <li><a href="{% url 'inventory_list' %}">Inventory</a></li>
+        
+
+        <li>
+          <a href="#" class="sale-btn">Sales & customers
+            <span class="fas fa-caret-down first"></span>
+          </a>
+          <ul class="sale-show">
+            <li><a href="{% url 'sale_list' %}">sales</a></li>
+            <li><a href="{% url 'customer_list' %}">customers</a></li>
+          </ul>
+        </li>
+
+
+        <li>
+          <a href="#" class="rep-btn">Reports
+            <span class="fas fa-caret-down first"></span>
+          </a>
+          <ul class="rep-show">
+            <li><a href="{% url 'employee_records' %}">Employees report</a></li>
+            <li><a href="{% url 'farm_records' %}">Farm report</a></li>
+            <li><a href="{% url 'harvest_records' %}">Harvest report</a></li>
+            <li><a href="{% url 'inventory_records' %}">Inventory report</a></li>
+            <li><a href="{% url 'sales_records' %}">sales report</a></li>
+          </ul>
+        </li>
+
+
+      </ul>
+    </nav>
+    <div class="content">
+      {% comment %} <div class="header">Sidebar Menu with sub-menu</div> {% endcomment %}
+      {% block content %}
+        {% endblock %}
+    </div>
+
+  
+    <script src="{% static 'js/base_nav.js' %}">  </script> 
+  </body>
+</html>

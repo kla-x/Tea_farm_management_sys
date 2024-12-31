@@ -1,0 +1,66 @@
+{% extends 'base_nav.html' %}
+
+{% block content %}
+    <h1>Farm Records</h1>
+    <h2>Farmers</h2>
+ 
+      
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th> No</th>
+                    <th>Name</th>
+                    <th>Phone</th>
+               
+                </tr>
+            </thead>
+            <tbody>
+                {% for farmer in farmers %}
+                    <tr class="{% cycle 'even' 'odd' %}">
+                        <td><span class="counter">{{ forloop.counter }}. </span></td>
+                        <td>{{ farmer.name }}</td>
+                        <td>{{ farmer.phone }}</td>
+                    
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+
+    <h2>Tea Plots</h2>
+    <ul>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th> No</th>
+                    <th>Name</th>
+                    <th>Location</th>
+                    <th>Area</th>
+                    <th>Soil Type</th>
+                    <th> No of Plants</th>
+               
+                </tr>
+            </thead>
+            <tbody>
+                {% for plot in plots %}
+                    <tr class="{% cycle 'even' 'odd' %}">
+                        <td><span class="counter">{{ forloop.counter }}. </span></td>
+                        <td>{{ plot.name }}</td>
+                        <td>{{ plot.location }}</td>
+                        <td>{{ plot.area }}</td>
+                        <td>{{ plot.soil_type }}</td>
+                        <td>{{ plot.number_of_plants}}</td>
+                    
+                    
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+
+
+
+        
+    </ul>
+{% endblock %}

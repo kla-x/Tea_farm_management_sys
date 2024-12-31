@@ -1,0 +1,10 @@
+{% extends 'records_app/base.html' %}
+
+{% block content %}
+    <h1>Employee Records</h1>
+    <ul>
+        {% for employee in employees %}
+            <li>{{ employee.name }} ({{ employee.position }})</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

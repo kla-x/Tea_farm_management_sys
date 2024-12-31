@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tea Farm Management System</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'farm_app/css/styles.css' %}">
+    <script src="{% static 'farm_app/js/scripts.js' %}"></script>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="{% url 'farmer_list' %}">Farmers</a></li>
+            <li><a href="{% url 'plot_list' %}">Tea Plots</a></li>
+            <!-- Add more navigation links as needed -->
+        </ul>
+    </nav>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+</body>
+</html>

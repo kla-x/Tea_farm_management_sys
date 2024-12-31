@@ -1,0 +1,10 @@
+{% extends 'records_app/base.html' %}
+
+{% block content %}
+    <h1>Inventory Records</h1>
+    <ul>
+        {% for product in products %}
+            <li>{{ product.name }} (Quantity: {{ product.quantity }})</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

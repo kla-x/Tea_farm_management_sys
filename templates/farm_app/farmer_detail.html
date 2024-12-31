@@ -1,0 +1,36 @@
+{% extends 'base_nav.html' %}
+
+{% block content %}
+    <h1>Farmer Details</h1>
+    <br>
+    Name: <span class="farmer-name">{{ farmer.name }}</span>
+    <p>Contact Information: <span class="farmer-name">{{ farmer.contact_information }}</p></span>
+    <br>
+    <br>
+    <h2>Assigned Tea Plots</h2>
+    <ul>
+        {% for plot in plots %}
+            <li>
+                <span class="counter">{{ forloop.counter }}. </span>
+                <span class="farmer-name">{{ plot.name }}</span>
+               <a  class="view-details" href="{% url 'plot_detail' plot.pk %}"> view details</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <br>
+    <br>
+    <h2>Tasks</h2>
+    <ul>
+        {% for task in tasks %}
+        
+            <li>
+                <span class="counter">{{ forloop.counter }}. </span>
+                
+                {{ task.title }} (Due: {{ task.due_date }})
+            </li>
+        {% endfor %}
+    </ul>
+    <a class="adder" href="{% url 'task_list' farmer.pk %}">view All Tasks</a>
+    <a class="adder" href="{% url 'create_task' farmer.pk %}">Add Task</a>
+    
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends 'records_app/base.html' %}
+
+{% block content %}
+    <h1>Harvest Records</h1>
+    <ul>
+        {% for task in tasks %}
+            <li>{{ task.title }} ({{ task.due_date }})</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

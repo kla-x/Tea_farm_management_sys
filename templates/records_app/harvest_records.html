@@ -1,0 +1,37 @@
+{% extends 'base_nav.html' %}
+
+{% block content %}
+    <h1>Harvest Records</h1>
+    <ul><table class="table">
+        <thead>
+            <tr>
+                <th> No</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Due date</th>
+                <th>is competed</th>
+                <th>Farmer</th>
+           
+            </tr>
+        </thead>
+        <tbody>
+            {% for task in tasks %}
+                <tr class="{% cycle 'even' 'odd' %}">
+                    <td><span class="counter">{{ forloop.counter }}. </span></td>
+                    <td>{{ task.title }}</td>
+                    <td>{{ task.description }}</td>
+                    <td>{{ task.due_date }}</td>
+                    <td>{% if task.completed %} Yes {% else %} No {% endif%} </td>
+                    <td>{{ task.farmer }}</td>
+                  
+                
+                
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+
+    
+    </ul>
+{% endblock %}

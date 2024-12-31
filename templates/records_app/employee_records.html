@@ -1,0 +1,37 @@
+{% extends 'base_nav.html' %}
+
+{% block content %}
+    <h1>Employee Records</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th> No</th>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Salary</th>
+                <th>Contact Information</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for employee in employees %}
+                <tr class="{% cycle 'even' 'odd' %}">
+                    <td><span class="counter">{{ forloop.counter }}. </span></td>
+                    <td>{{ employee.name }}</td>
+                    <td>{{ employee.position }}</td>
+                    <td>{{ employee.salary }}</td>
+                    <td>{{ employee.contact_information }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+
+
+
+------------------------------
+
+    name 
+    location 
+    area
+    soil_type 
+    number_of_plants 

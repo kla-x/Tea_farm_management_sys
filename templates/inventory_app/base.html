@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tea Farm Management System - Inventory</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'inventory_app/css/styles.css' %}">
+    <script src="{% static 'inventory_app/js/scripts.js' %}"></script>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="{% url 'inventory_list' %}">Inventory</a></li>
+            <!-- Add more navigation links as needed -->
+        </ul>
+    </nav>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+</body>
+</html>

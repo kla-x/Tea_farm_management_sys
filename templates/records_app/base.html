@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tea Farm Management System - Records</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'records_app/css/styles.css' %}">
+    <script src="{% static 'records_app/js/scripts.js' %}"></script>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="{% url 'employee_records' %}">Employee Records</a></li>
+            <li><a href="{% url 'farm_records' %}">Farm Records</a></li>
+            <li><a href="{% url 'harvest_records' %}">Harvest Records</a></li>
+            <li><a href="{% url 'inventory_records' %}">Inventory Records</a></li>
+            <li><a href="{% url 'sales_records' %}">Sales Records</a></li>
+        </ul>
+    </nav>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+</body>
+</html>

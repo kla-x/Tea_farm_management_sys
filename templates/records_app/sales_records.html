@@ -1,0 +1,77 @@
+{% extends 'base_nav.html' %}
+
+{% block content %}
+    <h1>Sales Records</h1>
+    <h2>Sales</h2>
+    <ul>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th> No</th>
+                    <th> Description</th>
+                    <th>Product</th>
+                    <th>quantity</th>
+                    <th>total price</th>
+                    <th>date</th>
+                    <th>customer</th>
+           
+               
+                </tr>
+            </thead>
+            <tbody>
+                {% for sale in sales %}
+                    <tr class="{% cycle 'even' 'odd' %}">
+                        <td><span class="counter">{{ forloop.counter }}. </span></td>
+                        <td>{{ sale }}</td>
+                        <td>{{ sale.product }}</td>
+                        <td>{{ sale.quantity }}</td>
+                        <td>{{ sale.total_price }}</td>
+                        <td>{{ sale.date }}</td>
+                        <td>{{ sale.customer }}</td>
+                      
+               
+                    
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+
+      
+    </ul>
+    <h2>Customers</h2>
+  
+
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th> No</th>
+                    <th> Name</th>
+                    <th>Address</th>
+                    <th>Contact number</th>
+                    <th>email</th>
+                  
+           
+               
+                </tr>
+            </thead>
+            <tbody>
+                {% for customer in customers %}
+                    <tr class="{% cycle 'even' 'odd' %}">
+                        <td><span class="counter">{{ forloop.counter }}. </span></td>
+                        <td>{{ customer.name }}</td>
+                        <td>{{ customer.address }}</td>
+                        <td>{{ customer.contact_number }}</td>
+                        <td>{{ customer.email }}</td>
+                        
+
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+
+   
+{% endblock %}

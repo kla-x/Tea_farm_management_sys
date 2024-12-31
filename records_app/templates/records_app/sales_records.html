@@ -1,0 +1,17 @@
+{% extends 'records_app/base.html' %}
+
+{% block content %}
+    <h1>Sales Records</h1>
+    <h2>Sales</h2>
+    <ul>
+        {% for sale in sales %}
+            <li>{{ sale }} ({{ sale.date }})</li>
+        {% endfor %}
+    </ul>
+    <h2>Customers</h2>
+    <ul>
+        {% for customer in customers %}
+            <li>{{ customer.name }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'base_nav.html' %}
+
+{% block content %}
+    <h1>Create Farmer</h1>
+    
+    <form method="post" class="form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+{% endblock %}

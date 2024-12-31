@@ -1,0 +1,17 @@
+{% extends 'base_nav.html' %}
+
+
+{% block content %}
+    <h1>Employees</h1>
+    <ul>
+        {% for employee in employees %}
+            <li>
+                <span class="counter">{{ forloop.counter }}. </span>
+                <span class="farmer-name">{{ employee.name }}</span>
+                <a class="view-details"  href="{% url 'employee_detail' employee.pk %}"> view details</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a h class="adder"  href="{% url 'create_employee' %}">Add Employee</a>
+    
+{% endblock %}
